@@ -77,6 +77,15 @@ extension JobSearchQuery.ListingTypeOptions: URLQueryConvertible {
     func convertToURLQueryItems() -> [URLQueryItem] {
 
         var retval: [URLQueryItem] = []
+        
+        if self.contains(.postedByRecruitmentAgency) {
+            retval.append(.init(name: "postedByRecruitmentAgency", value: "true"))
+        }
+        
+        if self.contains(.postedByDirectEmployer) {
+            retval.append(.init(name: "postedByDirectEmployer", value: "true"))
+        }
+
         return retval
     }
 }
@@ -86,14 +95,81 @@ extension JobSearchQuery.JobTypeOptions: URLQueryConvertible {
     func convertToURLQueryItems() -> [URLQueryItem] {
 
         var retval: [URLQueryItem] = []
+        
+        if self.contains(.permanent) {
+            retval.append(.init(name: "permanent", value: "true"))
+        }
+        
+        if self.contains(.contract) {
+            retval.append(.init(name: "contract", value: "true"))
+        }
+        
+        if self.contains(.temp) {
+            retval.append(.init(name: "temp", value: "true"))
+        }
+        
+        if self.contains(.partTime) {
+            retval.append(.init(name: "partTime", value: "true"))
+        }
+        
+        if self.contains(.fullTime) {
+            retval.append(.init(name: "fullTime", value: "true"))
+        }
+        
+        if self.contains(.graduate) {
+            retval.append(.init(name: "graduate", value: "true"))
+        }
+
         return retval
     }
 }
+
 extension JobSearchQuery: URLQueryConvertible {
     
     func convertToURLQueryItems() -> [URLQueryItem] {
         
         var retval: [URLQueryItem] = []
+        
+        if let employerId: String = self.employerId {
+            retval.append(.init(name: "employerId", value: employerId))
+        }
+
+        if let employerProfileId: String = self.employerProfileId {
+            retval.append(.init(name: "employerProfileId", value: employerProfileId))
+        }
+       
+        if let keywords: String = self.keywords {
+            retval.append(.init(name: "keywords", value: keywords))
+        }
+        
+        if let locationName: String = self.locationName {
+            retval.append(.init(name: "locationName", value: locationName))
+        }
+        
+        if let distanceFromLocation: Int = self.distanceFromLocation {
+            retval.append(.init(name: "distanceFromLocation", value: "\(distanceFromLocation)"))
+        }
+        
+        retval.append(contentsOf: self.typeOptions.convertToURLQueryItems())
+        
+        if let minimumSalary: Int = self.minimumSalary {
+            retval.append(.init(name: "minimumSalary", value: "\(minimumSalary)"))
+        }
+        
+        if let maximumSalary: Int = self.maximumSalary {
+            retval.append(.init(name: "maximumSalary", value: "\(maximumSalary)"))
+        }
+
+        retval.append(contentsOf: self.listingOptions.convertToURLQueryItems())
+        
+        if let resultsToTake: Int = self.resultsToTake {
+            retval.append(.init(name: "resultsToTake", value: "\(resultsToTake)"))
+        }
+        
+        if let resultsToSkip: Int = self.resultsToSkip {
+            retval.append(.init(name: "resultsToSkip", value: "\(resultsToSkip)"))
+        }
+        
         return retval
     }
 }

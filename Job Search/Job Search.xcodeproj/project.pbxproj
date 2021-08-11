@@ -14,7 +14,7 @@
 		5EF6207226C4258300DEAEAD /* Job_Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6207026C4258300DEAEAD /* Job_Search.xcdatamodeld */; };
 		5EF6207426C4258500DEAEAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6207326C4258500DEAEAD /* Assets.xcassets */; };
 		5EF6207726C4258500DEAEAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6207526C4258500DEAEAD /* LaunchScreen.storyboard */; };
-		5EF6208226C4258500DEAEAD /* SearchQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6208126C4258500DEAEAD /* SearchQueryTests.swift */; };
+		5EF6208226C4258500DEAEAD /* JobSearchQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6208126C4258500DEAEAD /* JobSearchQueryTests.swift */; };
 		5EF6209D26C425BD00DEAEAD /* JobSearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6209C26C425BD00DEAEAD /* JobSearchQuery.swift */; };
 		5EF620A026C431D100DEAEAD /* URLQueryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6209F26C431D100DEAEAD /* URLQueryConvertible.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +40,7 @@
 		5EF6207626C4258500DEAEAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EF6207826C4258500DEAEAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF6207D26C4258500DEAEAD /* Job SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Job SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EF6208126C4258500DEAEAD /* SearchQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueryTests.swift; sourceTree = "<group>"; };
+		5EF6208126C4258500DEAEAD /* JobSearchQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchQueryTests.swift; sourceTree = "<group>"; };
 		5EF6208326C4258500DEAEAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF6209C26C425BD00DEAEAD /* JobSearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchQuery.swift; sourceTree = "<group>"; };
 		5EF6209F26C431D100DEAEAD /* URLQueryConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryConvertible.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		5EF6208026C4258500DEAEAD /* Job SearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				5EF6208126C4258500DEAEAD /* SearchQueryTests.swift */,
+				5EF6208126C4258500DEAEAD /* JobSearchQueryTests.swift */,
 				5EF6208326C4258500DEAEAD /* Info.plist */,
 			);
 			path = "Job SearchTests";
@@ -245,7 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EF6208226C4258500DEAEAD /* SearchQueryTests.swift in Sources */,
+				5EF6208226C4258500DEAEAD /* JobSearchQueryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

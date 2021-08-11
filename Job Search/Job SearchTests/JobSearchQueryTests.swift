@@ -8,7 +8,7 @@
 import XCTest
 @testable import Job_Search
 
-final class SearchQueryTests: XCTestCase {
+final class JobSearchQueryTests: XCTestCase {
 
     /// Tests that an empty job search query will yield no URLQueryItem values upon conversion.
     ///
