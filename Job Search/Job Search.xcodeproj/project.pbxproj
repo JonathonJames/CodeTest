@@ -14,20 +14,13 @@
 		5EF6207226C4258300DEAEAD /* Job_Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6207026C4258300DEAEAD /* Job_Search.xcdatamodeld */; };
 		5EF6207426C4258500DEAEAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6207326C4258500DEAEAD /* Assets.xcassets */; };
 		5EF6207726C4258500DEAEAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6207526C4258500DEAEAD /* LaunchScreen.storyboard */; };
-		5EF6208226C4258500DEAEAD /* Job_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6208126C4258500DEAEAD /* Job_SearchTests.swift */; };
+		5EF6208226C4258500DEAEAD /* SearchQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6208126C4258500DEAEAD /* SearchQueryTests.swift */; };
 		5EF6209D26C425BD00DEAEAD /* JobSearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6209C26C425BD00DEAEAD /* JobSearchQuery.swift */; };
 		5EF620A026C431D100DEAEAD /* URLQueryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6209F26C431D100DEAEAD /* URLQueryConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		5EF6207E26C4258500DEAEAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EF6205C26C4258300DEAEAD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5EF6206326C4258300DEAEAD;
-			remoteInfo = "Job Search";
-		};
-		5EF6208926C4258500DEAEAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5EF6205C26C4258300DEAEAD /* Project object */;
 			proxyType = 1;
@@ -47,9 +40,8 @@
 		5EF6207626C4258500DEAEAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EF6207826C4258500DEAEAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF6207D26C4258500DEAEAD /* Job SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Job SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EF6208126C4258500DEAEAD /* Job_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job_SearchTests.swift; sourceTree = "<group>"; };
+		5EF6208126C4258500DEAEAD /* SearchQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueryTests.swift; sourceTree = "<group>"; };
 		5EF6208326C4258500DEAEAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EF6208826C4258500DEAEAD /* Job SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Job SearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF6209C26C425BD00DEAEAD /* JobSearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchQuery.swift; sourceTree = "<group>"; };
 		5EF6209F26C431D100DEAEAD /* URLQueryConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryConvertible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,13 +55,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5EF6207A26C4258500DEAEAD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5EF6208526C4258500DEAEAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,7 +78,6 @@
 			children = (
 				5EF6206426C4258300DEAEAD /* Job Search.app */,
 				5EF6207D26C4258500DEAEAD /* Job SearchTests.xctest */,
-				5EF6208826C4258500DEAEAD /* Job SearchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,7 +102,7 @@
 		5EF6208026C4258500DEAEAD /* Job SearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				5EF6208126C4258500DEAEAD /* Job_SearchTests.swift */,
+				5EF6208126C4258500DEAEAD /* SearchQueryTests.swift */,
 				5EF6208326C4258500DEAEAD /* Info.plist */,
 			);
 			path = "Job SearchTests";
@@ -186,24 +170,6 @@
 			productReference = 5EF6207D26C4258500DEAEAD /* Job SearchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5EF6208726C4258500DEAEAD /* Job SearchUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5EF6209726C4258500DEAEAD /* Build configuration list for PBXNativeTarget "Job SearchUITests" */;
-			buildPhases = (
-				5EF6208426C4258500DEAEAD /* Sources */,
-				5EF6208526C4258500DEAEAD /* Frameworks */,
-				5EF6208626C4258500DEAEAD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5EF6208A26C4258500DEAEAD /* PBXTargetDependency */,
-			);
-			name = "Job SearchUITests";
-			productName = "Job SearchUITests";
-			productReference = 5EF6208826C4258500DEAEAD /* Job SearchUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,10 +183,6 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					5EF6207C26C4258500DEAEAD = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 5EF6206326C4258300DEAEAD;
-					};
-					5EF6208726C4258500DEAEAD = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = 5EF6206326C4258300DEAEAD;
 					};
@@ -241,7 +203,6 @@
 			targets = (
 				5EF6206326C4258300DEAEAD /* Job Search */,
 				5EF6207C26C4258500DEAEAD /* Job SearchTests */,
-				5EF6208726C4258500DEAEAD /* Job SearchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,13 +219,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5EF6207B26C4258500DEAEAD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5EF6208626C4258500DEAEAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -291,14 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EF6208226C4258500DEAEAD /* Job_SearchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5EF6208426C4258500DEAEAD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				5EF6208226C4258500DEAEAD /* SearchQueryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,11 +256,6 @@
 			isa = PBXTargetDependency;
 			target = 5EF6206326C4258300DEAEAD /* Job Search */;
 			targetProxy = 5EF6207E26C4258500DEAEAD /* PBXContainerItemProxy */;
-		};
-		5EF6208A26C4258500DEAEAD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5EF6206326C4258300DEAEAD /* Job Search */;
-			targetProxy = 5EF6208926C4258500DEAEAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -535,46 +477,6 @@
 			};
 			name = Release;
 		};
-		5EF6209826C4258500DEAEAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XS6M342923;
-				INFOPLIST_FILE = "Job SearchUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jonathonjames.Job-SearchUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Job Search";
-			};
-			name = Debug;
-		};
-		5EF6209926C4258500DEAEAD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XS6M342923;
-				INFOPLIST_FILE = "Job SearchUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jonathonjames.Job-SearchUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Job Search";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -601,15 +503,6 @@
 			buildConfigurations = (
 				5EF6209526C4258500DEAEAD /* Debug */,
 				5EF6209626C4258500DEAEAD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5EF6209726C4258500DEAEAD /* Build configuration list for PBXNativeTarget "Job SearchUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5EF6209826C4258500DEAEAD /* Debug */,
-				5EF6209926C4258500DEAEAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

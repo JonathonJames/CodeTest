@@ -69,5 +69,31 @@ struct JobSearchQuery {
     }
 }
 
+
+// MARK: URLQueryConvertible Conformance
+
+extension JobSearchQuery.ListingTypeOptions: URLQueryConvertible {
+    
+    func convertToURLQueryItems() -> [URLQueryItem] {
+
+        var retval: [URLQueryItem] = []
+        return retval
+    }
 }
 
+extension JobSearchQuery.JobTypeOptions: URLQueryConvertible {
+    
+    func convertToURLQueryItems() -> [URLQueryItem] {
+
+        var retval: [URLQueryItem] = []
+        return retval
+    }
+}
+extension JobSearchQuery: URLQueryConvertible {
+    
+    func convertToURLQueryItems() -> [URLQueryItem] {
+        
+        var retval: [URLQueryItem] = []
+        return retval
+    }
+}
