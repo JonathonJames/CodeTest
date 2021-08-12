@@ -1770,7 +1770,7 @@ final class JobListingTests: XCTestCase {
     
     
     func testFullSearchResultDecode() throws {
-        XCTAssertNoThrow(try JSONDecoder().decode(JobSearchResult.self, from: self.jsonData))
+        XCTAssertNoThrow(try JSONDecoder().decode(QueryResponse.self, from: self.jsonData))
     }
 
 }

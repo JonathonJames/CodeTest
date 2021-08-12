@@ -47,25 +47,33 @@ struct JobSearchQuery {
     /// the location of the job
     var locationName: String?
     /// distance from location name in miles (default is 10)
-    var distanceFromLocation: Int?
+    var distanceFromLocation: Int64?
     /// types of jobs to include
     var typeOptions: JobTypeOptions
     /// lowest possible salary e.g. 20000
-    var minimumSalary: Int?
+    var minimumSalary: Double?
     /// highest possible salary e.g. 30000
-    var maximumSalary: Int?
+    var maximumSalary: Double?
     /// types of listing to include
     var listingOptions: ListingTypeOptions
     /// maximum number of results to return (defaults and is limited to 100 results)
-    var resultsToTake: Int?
+    var resultsToTake: Int64?
     /// number of results to skip (this can be used with resultsToTake for paging)
-    var resultsToSkip: Int?
+    var resultsToSkip: Int64?
     
     
     /// Convenience init with default parameters
     init() {
         self.typeOptions = []
         self.listingOptions = []
+        self.resultsToTake = 25
+    }
+    
+    
+    func withKeywordSearch(_ keywords: String) -> JobSearchQuery {
+        var copy: JobSearchQuery = self
+        copy.keywords = keywords
+        return copy
     }
 }
 
@@ -146,27 +154,27 @@ extension JobSearchQuery: URLQueryConvertible {
             retval.append(.init(name: "locationName", value: locationName))
         }
         
-        if let distanceFromLocation: Int = self.distanceFromLocation {
+        if let distanceFromLocation: Int64 = self.distanceFromLocation {
             retval.append(.init(name: "distanceFromLocation", value: "\(distanceFromLocation)"))
         }
         
         retval.append(contentsOf: self.typeOptions.convertToURLQueryItems())
         
-        if let minimumSalary: Int = self.minimumSalary {
+        if let minimumSalary: Double = self.minimumSalary {
             retval.append(.init(name: "minimumSalary", value: "\(minimumSalary)"))
         }
         
-        if let maximumSalary: Int = self.maximumSalary {
+        if let maximumSalary: Double = self.maximumSalary {
             retval.append(.init(name: "maximumSalary", value: "\(maximumSalary)"))
         }
 
         retval.append(contentsOf: self.listingOptions.convertToURLQueryItems())
         
-        if let resultsToTake: Int = self.resultsToTake {
+        if let resultsToTake: Int64 = self.resultsToTake {
             retval.append(.init(name: "resultsToTake", value: "\(resultsToTake)"))
         }
         
-        if let resultsToSkip: Int = self.resultsToSkip {
+        if let resultsToSkip: Int64 = self.resultsToSkip {
             retval.append(.init(name: "resultsToSkip", value: "\(resultsToSkip)"))
         }
         

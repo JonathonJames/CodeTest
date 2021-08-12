@@ -80,3 +80,11 @@ struct JobListing: Decodable {
         return retval
     }()
 }
+
+
+extension JobListing: Hashable {
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.jobId)
+    }
+}
