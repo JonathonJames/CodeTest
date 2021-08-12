@@ -10,6 +10,7 @@
 		5E00E14B26C518D400703EC1 /* BookmarkedListing+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00E14926C518D400703EC1 /* BookmarkedListing+CoreDataClass.swift */; };
 		5E00E14E26C51A2200703EC1 /* JobSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00E14D26C51A2200703EC1 /* JobSearchRepository.swift */; };
 		5E00E15026C5788800703EC1 /* JobListingSearchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00E14F26C5788800703EC1 /* JobListingSearchState.swift */; };
+		5EEB759A26C598D30004D374 /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB759926C598D30004D374 /* JobDetailsViewController.swift */; };
 		5EF6206826C4258300DEAEAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6206726C4258300DEAEAD /* AppDelegate.swift */; };
 		5EF6206A26C4258300DEAEAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6206926C4258300DEAEAD /* SceneDelegate.swift */; };
 		5EF6206C26C4258300DEAEAD /* JobListingSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6206B26C4258300DEAEAD /* JobListingSearchViewController.swift */; };
@@ -39,6 +40,7 @@
 		5E00E14926C518D400703EC1 /* BookmarkedListing+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookmarkedListing+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5E00E14D26C51A2200703EC1 /* JobSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchRepository.swift; sourceTree = "<group>"; };
 		5E00E14F26C5788800703EC1 /* JobListingSearchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListingSearchState.swift; sourceTree = "<group>"; };
+		5EEB759926C598D30004D374 /* JobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
 		5EF6206426C4258300DEAEAD /* Job Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Job Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF6206726C4258300DEAEAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EF6206926C4258300DEAEAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				5EF6206726C4258300DEAEAD /* AppDelegate.swift */,
 				5EF6206926C4258300DEAEAD /* SceneDelegate.swift */,
 				5EF6206B26C4258300DEAEAD /* JobListingSearchViewController.swift */,
+				5EEB759926C598D30004D374 /* JobDetailsViewController.swift */,
 				5EF6206D26C4258300DEAEAD /* Main.storyboard */,
 				5EF6207326C4258500DEAEAD /* Assets.xcassets */,
 				5EF6207526C4258500DEAEAD /* LaunchScreen.storyboard */,
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EF620A426C50CE000DEAEAD /* JobListingSearchResponse.swift in Sources */,
+				5EEB759A26C598D30004D374 /* JobDetailsViewController.swift in Sources */,
 				5EF6206C26C4258300DEAEAD /* JobListingSearchViewController.swift in Sources */,
 				5EF620A226C50A8500DEAEAD /* JobListing.swift in Sources */,
 				5E00E14B26C518D400703EC1 /* BookmarkedListing+CoreDataClass.swift in Sources */,
@@ -306,6 +310,7 @@
 		5EF6208F26C4258500DEAEAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALTERNATE_OWNER = "$(INSTALL_OWNER)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -354,6 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_OWNER = jonathonjames;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -367,6 +373,7 @@
 		5EF6209026C4258500DEAEAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALTERNATE_OWNER = "$(INSTALL_OWNER)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -409,6 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_OWNER = jonathonjames;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

@@ -90,10 +90,148 @@
             </objects>
             <point key="canvasLocation" x="78" y="92"/>
         </scene>
+        <!--Job Details View Controller-->
+        <scene sceneID="ams-xS-HDC">
+            <objects>
+                <viewController storyboardIdentifier="JobDetailsViewController" id="pgR-XK-rwa" customClass="JobDetailsViewController" customModule="Job_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B3b-mw-BCV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="il6-eG-M1s">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view verifyAmbiguity="off" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOp-k1-uPT" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hDZ-9w-otX">
+                                        <rect key="frame" x="8" y="0.0" width="398" height="487"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kig-iA-gaa">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="330"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21J-BL-0de">
+                                                        <rect key="frame" x="54" y="20" width="290" height="290"/>
+                                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="21J-BL-0de" secondAttribute="height" multiplier="1:1" id="4aV-Uk-OCU"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="21J-BL-0de" firstAttribute="centerX" secondItem="kig-iA-gaa" secondAttribute="centerX" id="6t9-ja-sOw"/>
+                                                    <constraint firstItem="21J-BL-0de" firstAttribute="top" secondItem="kig-iA-gaa" secondAttribute="top" constant="20" symbolic="YES" id="M2p-y8-GR6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="21J-BL-0de" secondAttribute="bottom" constant="20" symbolic="YES" id="nE0-Hk-wBE"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jj1-9z-7up">
+                                                <rect key="frame" x="0.0" y="330" width="398" height="157"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPc-Am-iOa" userLabel="Employer">
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="13.5"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zh-lj-P7p">
+                                                        <rect key="frame" x="0.0" y="18.5" width="398" height="17"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWN-Gc-RMo" userLabel="Job Title">
+                                                        <rect key="frame" x="0.0" y="40.5" width="398" height="13.5"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn5-uO-Yvz">
+                                                        <rect key="frame" x="0.0" y="59" width="398" height="17"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-3O-7PU" userLabel="Salary">
+                                                        <rect key="frame" x="0.0" y="81" width="398" height="13.5"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHt-ug-RwM">
+                                                        <rect key="frame" x="0.0" y="99.5" width="398" height="17"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8x-Dq-Q3j" userLabel="Description">
+                                                        <rect key="frame" x="0.0" y="121.5" width="398" height="13.5"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0m-lO-SlM">
+                                                        <rect key="frame" x="0.0" y="140" width="398" height="17"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="hDZ-9w-otX" secondAttribute="trailing" id="CBk-uB-kW3"/>
+                                    <constraint firstAttribute="bottom" secondItem="aOp-k1-uPT" secondAttribute="bottom" id="LTc-Ae-AoP"/>
+                                    <constraint firstAttribute="trailing" secondItem="aOp-k1-uPT" secondAttribute="trailing" id="Mhb-Kd-Kz8"/>
+                                    <constraint firstItem="hDZ-9w-otX" firstAttribute="leading" secondItem="il6-eG-M1s" secondAttribute="leadingMargin" id="OY0-AY-wGK"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hDZ-9w-otX" secondAttribute="bottom" constant="30" id="VWW-U1-Wtb"/>
+                                    <constraint firstItem="hDZ-9w-otX" firstAttribute="top" secondItem="il6-eG-M1s" secondAttribute="top" id="WUK-d7-sp0"/>
+                                    <constraint firstItem="aOp-k1-uPT" firstAttribute="centerX" secondItem="il6-eG-M1s" secondAttribute="centerX" id="h8v-E3-Rmr"/>
+                                    <constraint firstItem="aOp-k1-uPT" firstAttribute="leading" secondItem="il6-eG-M1s" secondAttribute="leading" id="sUA-ro-8Lb"/>
+                                    <constraint firstItem="aOp-k1-uPT" firstAttribute="top" secondItem="il6-eG-M1s" secondAttribute="top" id="tCw-F8-le5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cqz-OZ-QNx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cqz-OZ-QNx" firstAttribute="bottom" secondItem="il6-eG-M1s" secondAttribute="bottom" id="7Uj-3X-eoS"/>
+                            <constraint firstItem="aOp-k1-uPT" firstAttribute="height" relation="greaterThanOrEqual" secondItem="cqz-OZ-QNx" secondAttribute="height" id="Amr-TV-x52"/>
+                            <constraint firstItem="21J-BL-0de" firstAttribute="width" secondItem="cqz-OZ-QNx" secondAttribute="width" multiplier="0.7" id="Cjf-Fz-poz"/>
+                            <constraint firstItem="il6-eG-M1s" firstAttribute="leading" secondItem="cqz-OZ-QNx" secondAttribute="leading" id="Htq-sN-Hf8"/>
+                            <constraint firstItem="cqz-OZ-QNx" firstAttribute="trailing" secondItem="il6-eG-M1s" secondAttribute="trailing" id="cKh-jO-Slv"/>
+                            <constraint firstItem="il6-eG-M1s" firstAttribute="top" secondItem="cqz-OZ-QNx" secondAttribute="top" id="cjm-cA-Wxf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionHeaderLabel" destination="p8x-Dq-Q3j" id="5vw-5i-HQl"/>
+                        <outlet property="descriptionLabel" destination="P0m-lO-SlM" id="x5n-O3-o4H"/>
+                        <outlet property="employerHeaderLabel" destination="iPc-Am-iOa" id="w92-ay-Qdk"/>
+                        <outlet property="employerNameLabel" destination="2zh-lj-P7p" id="hsR-sa-tK3"/>
+                        <outlet property="imageContainerView" destination="21J-BL-0de" id="G4P-Ts-qsL"/>
+                        <outlet property="jobTitleHeaderLabel" destination="xWN-Gc-RMo" id="yWQ-Du-Xao"/>
+                        <outlet property="jobTitleLabel" destination="Wn5-uO-Yvz" id="YWf-5n-fSH"/>
+                        <outlet property="salaryHeaderLabel" destination="IUg-3O-7PU" id="sGl-Dy-dKn"/>
+                        <outlet property="salaryLabel" destination="eHt-ug-RwM" id="mK9-aa-zDh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q4m-QH-rhS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="92"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

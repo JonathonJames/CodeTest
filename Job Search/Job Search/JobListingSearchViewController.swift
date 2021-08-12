@@ -193,7 +193,10 @@ extension JobListingSearchViewController: UITableViewDelegate {
             #warning("TODO: Display an error here. The selected listing can't be found.")
             return
         }
-        #warning("TODO: Display details screen for selected listing")
-        print(listing)
+
+        self.navigationController?.pushViewController(
+            JobDetailsViewController.newInstance(viewModel: .init(listing: listing)),
+            animated: true
+        )
     }
 }

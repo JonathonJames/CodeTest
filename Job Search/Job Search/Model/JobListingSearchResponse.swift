@@ -2,7 +2,7 @@
 //  JobListingSearchResponse.swift
 //  Job Search
 //
-//  Created by Uncreation on 12/08/2021.
+//  Created by Jonathon James on 12/08/2021.
 //
 
 import Foundation

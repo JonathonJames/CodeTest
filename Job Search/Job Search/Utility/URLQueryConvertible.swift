@@ -2,7 +2,7 @@
 //  URLQueryConvertible.swift
 //  Job Search
 //
-//  Created by Uncreation on 11/08/2021.
+//  Created by Jonathon James on 11/08/2021.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  JobListingTests.swift
 //  Job SearchTests
 //
-//  Created by Uncreation on 12/08/2021.
+//  Created by Jonathon James on 12/08/2021.
 //
 
 import XCTest
