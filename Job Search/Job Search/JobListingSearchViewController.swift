@@ -33,6 +33,7 @@ final class JobListingSearchViewController: UIViewController {
     
     final class ViewModel {
         fileprivate let repository: JobSearchRepository
+        fileprivate var previousQuery: JobSearchQuery = .init()
         fileprivate var query: JobSearchQuery = .init()
         private var cancellables: [AnyCancellable] = []
         
@@ -59,6 +60,8 @@ final class JobListingSearchViewController: UIViewController {
                     var query = self.query
                     query.keywords = keywords
                     query.resultsToSkip = page * (query.resultsToTake ?? 25)
+                    self.previousQuery = query
+                    self.query = query
                     return self.repository.performSearch(query)
                 })
                 .map { result -> JobListingSearchState in
@@ -160,7 +163,14 @@ final class JobListingSearchViewController: UIViewController {
                 print("An error occured when performing search: \(error)")
             case .loaded(let data):
                 DispatchQueue.main.async {
-                    var snapshot = self.datasource.snapshot()
+                    var snapshot: NSDiffableDataSourceSnapshot<JobListingSearchState.DataSections, JobListing>
+                    if (self.viewModel.query.resultsToSkip == nil || self.viewModel.previousQuery.resultsToSkip! == 0) ||
+                        (self.viewModel.query.keywords != self.viewModel.previousQuery.keywords) {
+                        snapshot = .init()
+                        snapshot.appendSections(JobListingSearchState.DataSections.allCases)
+                    } else {
+                        snapshot = self.datasource.snapshot()
+                    }
                     JobListingSearchState.DataSections.allCases.forEach { section in
                         snapshot.appendItems(data.data[section] ?? [], toSection: section)
                     }
