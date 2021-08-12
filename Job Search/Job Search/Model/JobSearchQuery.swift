@@ -68,13 +68,6 @@ struct JobSearchQuery {
         self.listingOptions = []
         self.resultsToTake = 25
     }
-    
-    
-    func withKeywordSearch(_ keywords: String) -> JobSearchQuery {
-        var copy: JobSearchQuery = self
-        copy.keywords = keywords
-        return copy
-    }
 }
 
 

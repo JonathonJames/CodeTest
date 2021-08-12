@@ -23,11 +23,10 @@ final class JobListingTableViewCell: UITableViewCell {
 private struct InputParameters {
     // Publishes keyword search parameters.
     let keyword: AnyPublisher<String, Never>
-    
+    // Publishes pagination parameters.
+    let pagination: AnyPublisher<Int64, Never>
     #warning("TODO: Add other filter parameters")
 }
-
-
 
 /// Describes a view controller which allows for the search and display of `JobListing`s.
 final class JobListingSearchViewController: UIViewController {
@@ -51,8 +50,17 @@ final class JobListingSearchViewController: UIViewController {
                 .removeDuplicates()
                 .filter({ !$0.isEmpty })
             
-            let asyncSearch = keywordInput
-                .flatMap({ [unowned self] keywords in self.repository.performSearch(self.query.withKeywordSearch(keywords)) })
+            let paginationInput = input.pagination
+                .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
+                .removeDuplicates()
+            
+            let asyncSearch = Publishers.CombineLatest(keywordInput, paginationInput)
+                .flatMap({ [unowned self] (keywords, page) -> AnyPublisher<Result<JobListingSearchResult, Error>, Never> in
+                    var query = self.query
+                    query.keywords = keywords
+                    query.resultsToSkip = page * (query.resultsToTake ?? 25)
+                    return self.repository.performSearch(query)
+                })
                 .map { result -> JobListingSearchState in
                     switch result {
                     case .success(let searchResults):
@@ -76,6 +84,7 @@ final class JobListingSearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let keywordSearchPublisher: PassthroughSubject<String, Never> = .init()
+    private let paginationPublisher: CurrentValueSubject<Int64, Never> = .init(0)
     
     private var cancellables: [AnyCancellable] = []
     
@@ -94,10 +103,8 @@ final class JobListingSearchViewController: UIViewController {
         )
     }()
     
-    var subscriptions: [AnyCancellable] = []
-    
     private lazy var datasource: UITableViewDiffableDataSource<JobListingSearchState.DataSections, JobListing> = {
-        return UITableViewDiffableDataSource(
+        let retval: UITableViewDiffableDataSource<JobListingSearchState.DataSections, JobListing> = .init(
             tableView: tableView,
             cellProvider: {  tableView, indexPath, model in
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "JobListingTableViewCell") as? JobListingTableViewCell else {
@@ -109,6 +116,11 @@ final class JobListingSearchViewController: UIViewController {
                 return cell
             }
         )
+        
+        var snapshot = retval.snapshot()
+        snapshot.appendSections(JobListingSearchState.DataSections.allCases)
+        retval.apply(snapshot, animatingDifferences: false)
+        return retval
     }()
     
     
@@ -118,6 +130,7 @@ final class JobListingSearchViewController: UIViewController {
         // Setup the table view's datasource and search bar's delegate.
 
         self.tableView.dataSource = self.datasource
+        self.tableView.delegate = self
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 42
         
@@ -128,11 +141,13 @@ final class JobListingSearchViewController: UIViewController {
         self.cancellables.forEach { $0.cancel() }
         self.cancellables.removeAll()
         
-        let input = InputParameters(keyword: self.keywordSearchPublisher.eraseToAnyPublisher())
-
-        let output = self.viewModel.process(input: input)
-
-        output.sink(receiveValue: {[unowned self] state in
+        self.viewModel.process(
+            input: InputParameters(
+                keyword: self.keywordSearchPublisher.eraseToAnyPublisher(),
+                pagination: self.paginationPublisher.eraseToAnyPublisher()
+            )
+        )
+        .sink(receiveValue: {[unowned self] state in
             switch state {
             case .idle:
                 #warning("TODO: Prompt the user to do something. Give them an example search query, perhaps.")
@@ -145,8 +160,7 @@ final class JobListingSearchViewController: UIViewController {
                 print("An error occured when performing search: \(error)")
             case .loaded(let data):
                 DispatchQueue.main.async {
-                    var snapshot = NSDiffableDataSourceSnapshot<JobListingSearchState.DataSections, JobListing>()
-                    snapshot.appendSections(JobListingSearchState.DataSections.allCases)
+                    var snapshot = self.datasource.snapshot()
                     JobListingSearchState.DataSections.allCases.forEach { section in
                         snapshot.appendItems(data.data[section] ?? [], toSection: section)
                     }
@@ -161,5 +175,25 @@ extension JobListingSearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.keywordSearchPublisher.send(searchText)
+    }
+}
+
+extension JobListingSearchViewController: UITableViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        if targetContentOffset.pointee.y >= scrollView.contentSize.height - (scrollView.visibleSize.height * 1.5) {
+            #warning("TODO: Only try and paginate if there's more data to fetch")
+            self.paginationPublisher.send(self.paginationPublisher.value + 1)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let listing: JobListing = self.datasource.itemIdentifier(for: indexPath) else {
+            #warning("TODO: Display an error here. The selected listing can't be found.")
+            return
+        }
+        #warning("TODO: Display details screen for selected listing")
+        print(listing)
     }
 }
