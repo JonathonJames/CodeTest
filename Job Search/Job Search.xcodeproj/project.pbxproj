@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E00E14B26C518D400703EC1 /* BookmarkedListing+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00E14926C518D400703EC1 /* BookmarkedListing+CoreDataClass.swift */; };
 		5EF6206826C4258300DEAEAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6206726C4258300DEAEAD /* AppDelegate.swift */; };
 		5EF6206A26C4258300DEAEAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6206926C4258300DEAEAD /* SceneDelegate.swift */; };
 		5EF6206C26C4258300DEAEAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6206B26C4258300DEAEAD /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E00E14926C518D400703EC1 /* BookmarkedListing+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookmarkedListing+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5EF6206426C4258300DEAEAD /* Job Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Job Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF6206726C4258300DEAEAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EF6206926C4258300DEAEAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				5EF6209C26C425BD00DEAEAD /* JobSearchQuery.swift */,
 				5EF620A126C50A8500DEAEAD /* JobListing.swift */,
 				5EF620A326C50CE000DEAEAD /* JobSearchResult.swift */,
+				5E00E14926C518D400703EC1 /* BookmarkedListing+CoreDataClass.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				5EF620A426C50CE000DEAEAD /* JobSearchResult.swift in Sources */,
 				5EF6206C26C4258300DEAEAD /* ViewController.swift in Sources */,
 				5EF620A226C50A8500DEAEAD /* JobListing.swift in Sources */,
+				5E00E14B26C518D400703EC1 /* BookmarkedListing+CoreDataClass.swift in Sources */,
 				5EF6206826C4258300DEAEAD /* AppDelegate.swift in Sources */,
 				5EF620A026C431D100DEAEAD /* URLQueryConvertible.swift in Sources */,
 				5EF6209D26C425BD00DEAEAD /* JobSearchQuery.swift in Sources */,
