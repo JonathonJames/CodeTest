@@ -45,6 +45,12 @@ struct JobListing: Decodable {
     
     
     init(from decoder: Decoder) throws {
+        
+        // Custom decoding. Although the large majority of this is the same as the default implementation,
+        // this allows for dates/floating-point-to-Decimal to be handled internally. This is important for re-use
+        // as if this struct is nested within a parent object, the default JSONDecoder can only handle the 1 date
+        // strategy, etc. Keeping things internal means the caller doesn't need to care about these kinds of details.
+        
         let container: KeyedDecodingContainer = try decoder.container(keyedBy: CodingKeys.self)
         self.jobId = try container.decode(Int64.self, forKey: .jobId)
         self.employerId = try container.decode(Int64.self, forKey: .employerId)
@@ -58,7 +64,7 @@ struct JobListing: Decodable {
         self.applications = try container.decode(Int64.self, forKey: .applications)
         self.jobUrl = try container.decode(String.self, forKey: .jobUrl)
         
-        // TODO: These salary values the API sends are floating-point. This is open to loss of precision.
+        #warning("TODO: These salary values the API sends are floating-point. This is open to loss of precision.")
         self.minimumSalary = try container.decodeIfPresent(Double.self, forKey: .minimumSalary)
         self.maximumSalary = try container.decodeIfPresent(Double.self, forKey: .maximumSalary)
         
