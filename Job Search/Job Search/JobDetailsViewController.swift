@@ -42,6 +42,7 @@ final class JobDetailsViewController: UIViewController {
             formatter.currencyCode = currency
             formatter.locale = Locale.current
             formatter.numberStyle = .currency
+            formatter.maximumFractionDigits = 0
             
             if let min: Double = self.viewModel.listing.minimumSalary {
                 if let max: Double = self.viewModel.listing.maximumSalary {

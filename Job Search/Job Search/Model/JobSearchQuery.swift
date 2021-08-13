@@ -66,7 +66,6 @@ struct JobSearchQuery {
     init() {
         self.typeOptions = []
         self.listingOptions = []
-        self.resultsToTake = 25
     }
 }
 
@@ -154,11 +153,11 @@ extension JobSearchQuery: URLQueryConvertible {
         retval.append(contentsOf: self.typeOptions.convertToURLQueryItems())
         
         if let minimumSalary: Double = self.minimumSalary {
-            retval.append(.init(name: "minimumSalary", value: "\(minimumSalary)"))
+            retval.append(.init(name: "minimumSalary", value: String(format: "%.0f", minimumSalary)))
         }
         
         if let maximumSalary: Double = self.maximumSalary {
-            retval.append(.init(name: "maximumSalary", value: "\(maximumSalary)"))
+            retval.append(.init(name: "maximumSalary", value:  String(format: "%.0f", maximumSalary)))
         }
 
         retval.append(contentsOf: self.listingOptions.convertToURLQueryItems())
